@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body header {
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+
+        html,
+        header,
+        nav,
+        body,
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .thin {
+            font-weight: 100;
+        }
+
+        .Light {
+            font-weight: 300;
+        }
+
+        .regular {
+            font-weight: 400;
+        }
+
+        .med {
+            font-weight: 500;
+        }
+
+        .semib {
+            font-weight: 600;
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        .extb {
+            font-weight: 800;
+        }
+
+        .black {
+            font-weight: 900;
+        }
+
+        a:hover {
+            font-weight: 2em;
+            text-decoration: underline;
+            color: #185699;
+        }
+
+        header .menubox {
+            width: 1920px;
+            height: 81px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            opacity: 1;
+            position: relative;
+        }
+
+        header .menubox div .img1 {
+            width: 210px;
+            height: 26px;
+        }
+
+        header .menubox nav {
+            width: 700px;
+            height: 25px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        header .menubox nav ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header .menubox nav ul li {
+            list-style: none;
+            font-weight: 600;
+            font-size: 20px;
+            padding-bottom: 22px;
+        }
+
+        header .menubox nav ul li p {
+            color: #185699;
+            font: italic normal 600 20px/24px Montserrat;
+            margin-right: 5px;
+        }
+
+        header .menubox .login {
+            width: 126px;
+            height: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 75px;
+        }
+
+        header .menubox .login a {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        header .menubox .login .img {
+            width: 24px;
+            height: 24px;
+            background-image: url(earth.png);
+
+
+        }
+
+        header .menubox .login .img:hover {
+            width: 24px;
+            height: 24px;
+            background-image: url(earth_hover.png);
+        }
+
+        header .bigmenubox {
+            width: 1920px;
+            height: auto;
+            border: 1px solid #1234A6;
+            align-content: center;
+            position: absolute;
+            top: 81px;
+            left: 0;
+            background-color: white;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        header .bigmenubox .bigmenubox1-1 {
+            font: normal normal bold 15px Montserrat;
+            border-right: 1px solid black;
+            width: 195.55px;
+            height: auto;
+            align-content: center;
+        }
+
+        header .bigmenubox .bigmenubox1-1 div {
+            margin: 10px 0px;
+
+        }
+
+        header .bigmenubox .bigmenubox1-2 {
+            font: normal normal normal 15px Montserrat;
+            display: flex;
+            margin-left: 20px;
+        }
+
+        header .bigmenubox .bigmenubox1-2 div {
+            margin: 10px 0px;
+        }
+
+        header .bigmenubox .bigmenubox1-2 div a {
+            margin-right: 30px;
+        }
+
+        .sec1 {
+            width: 1920px;
+            height: 1080px;
+
+        }
+
+        .sec1 .inputbox {
+            display: flex;
+            position: relative;
+            padding-top: 56px;
+            justify-content: center;
+        }
+
+        .sec1 .inputbox input {
+            font-size: 15px;
+            font-weight: 600;
+            width: 821px;
+            height: 49px;
+            background: #000000 0% 0% no-repeat padding-box;
+            border-radius: 15px;
+            opacity: 0.15;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+        }
+
+        .sec1 .tagbox {
+            font: normal normal 400 12px Noto Sans Syriac;
+            color: black;
+            margin: 20px auto 0px;
+            width: 300px;
+            height: 16px;
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            position: relative;
+            left: -40px;
+            background-color: #00000000;
+            background-image: url(serch.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            top: 10px;
+        }
+
+        .sec1 .tagbox a {
+            color: #426FD3;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        input[type="search"]::placeholder {
+            text-align: center;
+        }
+
+        [type="search"]::-webkit-search-cancel-button,
+        [type="search"]::-webkit-search-results-button {
+            display: none;
+            /* X 버튼 및 검색 결과 버튼 숨기기 */
+        }
+
+        .sec1 .navi {
+            width: 1613px;
+            height: 223px;
+            display: flex;
+            justify-content: space-between;
+            margin: 68px auto 0px;
+        }
+
+        .sec1 .navi>.box>img {
+            width: 80px;
+            height: 69px;
+            align-items: center;
+        }
+
+        .sec1 .navi>div>.img1 {
+            width: 230px;
+            height: 223px;
+            transform: rotateY(180deg);
+        }
+
+        .sec1 .box {
+            width: 185px;
+            height: 160px;
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 30px;
+            opacity: 1;
+            align-content: center;
+            text-align: center;
+
+
+        }
+
+        .sec1 .box:hover {
+            box-shadow: 20px 20px 15px #00000029;
+        }
+
+        .sec1 .box a {
+            display: block;
+            font: normal normal medium 20px;
+            font-size: 20px;
+            margin-top: 7px;
+
+        }
+
+        .sec2 {
+            width: 1920px;
+            height: 716px;
+            margin-top: 100px;
+        }
+
+        .sec2>div {
+            width: 1615px;
+            height: 716px;
+            margin: auto;
+        }
+
+        .sec2>div>div>p {
+            text-align: left;
+            font: normal normal 900 65px Noto Sans Syriac;
+            color: #000000;
+            opacity: 1;
+            font-size: 900;
+            font-weight: 65px;
+            margin-bottom: 34px;
+        }
+
+        .sec2>div>.box {
+            width: 1613px;
+            height: 419px;
+            background: #F8F8F8 0% 0% no-repeat padding-box;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .sec2 .under_line {
+            border-bottom: 1px solid black;
+            width: 360.5;
+
+        }
+
+        .sec2 .box>div>div {
+            margin-top: 10px;
+        }
+
+        .sec2 .right_line>p {
+            position: relative;
+            top: -20px;
+        }
+
+        .sec2 .right_line {
+            border-right: 1px solid black;
+            height: 306px;
+
+        }
+
+        .sec2 .right_line:last-child {
+            border-right: none;
+        }
+
+        .sec2 .box>div>p {
+            font: normal normal 900 30px Noto Sans Syriac;
+        }
+
+        .sec2 .under_line>div>p {
+            font: normal normal 200 16px Noto Sans Syriac;
+            color: #FF2B00;
+
+        }
+
+        .sec2 .under_line>div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+
+
+        .sec2 .under_line>div>a {
+            font: normal normal 600 16px Noto Sans Syriac;
+            margin-bottom: 10px;
+        }
+
+        .sec2 .right_line {
+            padding: 0px 87px;
+        }
+
+        .sec2 .more {
+            border: 1px solid #707070;
+            border-radius: 15px;
+            width: 66px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto 0px;
+        }
+
+        .sec2 .more a {
+            font: normal normal 600 10px Noto Sans Syriac;
+        }
+
+        .sec3 {
+            width: 1920px;
+            height: 527px;
+
+        }
+
+        .sec3>div {
+            width: 1613px;
+            height: 686px;
+            margin: auto;
+        }
+
+        .sec3 .news {
+            margin-top: 30px;
+        }
+
+        .sec3>div>div>p {
+            text-align: left;
+            font: normal normal 900 65px Noto Sans Syriac;
+            color: #000000;
+            margin-right: 1150px;
+        }
+
+        .sec3 .smname {
+            display: flex;
+            width: 1611px;
+            justify-content: space-between;
+
+        }
+
+        .sec3 .smname .smname1 {
+            display: flex;
+            width: 522px;
+            justify-content: space-between;
+        }
+
+        .sec3 .smname .smname1>p {
+            font: normal normal 900 30px Noto Sans Syriac;
+        }
+
+        .sec3 .smname .smname1>div>a {
+            font: normal normal 600 9px Noto Sans Syriac;
+            color: #000000;
+        }
+
+        .sec3 .smname .smname1>div {
+            margin-top: 10px;
+            border: 1px solid black;
+            border-radius: 15px;
+            width: 61px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sec3 .news1 {
+            width: 1609px;
+            height: 118px;
+            margin-bottom: 67px;
+        }
+
+        .sec3 .news2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sec3 .news2>div {
+            width: 522px;
+            height: 118px;
+            background: #F8F8F8 0% 0% no-repeat padding-box;
+            border-radius: 25px;
+            display: flex;
+
+        }
+
+        .sec3 .news2>div:hover {
+            box-shadow: 15px 15px 20px #00000029;
+
+        }
+
+        .sec3 .news2>div>div>img {
+            width: 167px;
+            height: 111px;
+            border-radius: 15px;
+            margin-right: 20px;
+        }
+
+        .sec3 .news2>div>div>p {
+            font: normal normal 300 13px Noto Sans Syriac;
+            color: #001DFF;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sec3 .news2>div>div>div>a {
+            font: normal normal 600 14px Noto Sans Syriac;
+            color: #000000;
+        }
+
+        .sec4 {
+            width: 1920px;
+
+            margin-top: 130px;
+        }
+
+        .sec4>div>.sns>.smname>p {
+            font: normal normal 900 65px Noto Sans Syriac;
+
+        }
+
+        .sec4>div>.sns>.smname>div>img {
+            width: 47px;
+            height: 47px;
+        }
+
+        .sec4>div>.sns>.smname {
+
+            align-items: center;
+
+        }
+
+        .sec4>div>.sns>.sns2>div {
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 30px;
+            width: 420px;
+            height: 420px;
+            position: relative
+        }
+
+        .sec4>div>.sns>.sns2>div:hover p {
+            display: block;
+        }
+
+
+        .sec4>div>.sns>.sns2>div>.img1:hover {
+            background-color: rgba(0, 0, 0, 0.434)
+        }
+
+        .sec4>div>.sns>.sns2>div>.img1 {
+            width: 323px;
+            height: 323px;
+            margin: auto;
+            background-image: url(sns1.png);
+            background-size: cover;
+        }
+
+        .sec4>div>.sns>.sns2>div>.img2 {
+            width: 323px;
+            height: 323px;
+            margin: auto;
+            background-image: url(sns2.png);
+            background-size: cover;
+        }
+
+        .sec4>div>.sns>.sns2>div>p {
+            font: normal normal medium 16px Noto Sans Syriac;
+            margin-top: 10px;
+            display: none;
+            position: absolute;
+            top: 38px;
+            left: 48px;
+            color: white;
+            width: 323px;
+            height: 323px;
+            background-color: rgba(0, 0, 0, 0.387);
+            text-align: center;
+            /* 가로 중앙 정렬 */
+            align-content: center;
+        }
+
+
+        .sec4>div>.sns>.sns2>div {
+            align-content: center;
+            text-align: center;
+        }
+
+        .sec4>div>.sns>.sns2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sec4>div>.sns>.blog {
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 30px;
+            width: 839px;
+            height: 229px;
+            margin-top: 31px;
+        }
+
+        .sec4>div>.sns>.blog>.under_line {
+            border-bottom: 1px solid black;
+
+        }
+
+        .sec4>div>.sns>.blog>div>a>.img3 {
+            width: 47px;
+            height: 47px;
+            background-image: url(sns3.png);
+            margin-right: 12px;
+        }
+
+        .sec4>div>.sns>.blog>div>a>.img3:hover {
+            width: 53px;
+            height: 53px;
+            background-size: cover;
+        }
+
+        .sec4>div>.sns>.blog>div {
+            display: flex;
+        }
+
+        .sec4>div>.sns>.blog>div>div>a {
+            font: normal normal 600 17px Noto Sans Syriac;
+            margin-bottom: 5px;
+        }
+
+        .sec4>div>.sns>.blog>div>div>p {
+            font: normal normal 300 17px Noto Sans Syriac;
+        }
+
+        .sec4>div>.sns>.blog>div {
+            padding: 32px 0px 32px 0px;
+
+        }
+
+
+
+        .sec4>div>.sns>.blog>div {
+            width: 702.62px;
+            margin: auto;
+        }
+
+        .sec4>div>.link {
+            width: 724px;
+            height: 674px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sec4>div>.link>a {
+            width: 724px;
+            height: 130px;
+            background-size: cover;
+            position: relative;
+            top: 100px;
+        }
+
+        .sec4>div {
+            display: flex;
+            width: 1615px;
+            height: 757px;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        footer {
+            width: 1920px;
+            margin-top: 150px;
+            height: 418px;
+        }
+
+        footer .footer1 {
+            width: 1920px;
+            height: 117px;
+            background: #F0F2F5;
+            align-content: center;
+        }
+
+        footer .footer1>div {
+            width: 1203px;
+            height: 38px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        footer .footer1>div p {
+            font-size: 25px;
+            font-weight: 500;
+
+        }
+
+        footer .footer1>div div {
+            width: 135px;
+            height: 38px;
+        }
+
+        footer .footer2 {
+            width: 1920px;
+            height: 301px;
+            background: #00458D;
+            color: white;
+        }
+
+        footer .footer2 a {
+            color: white;
+            font: normal normal 300 16px Noto Sans Syriac;
+        }
+
+        footer>.footer2>div>p {
+            font: normal normal bold 16px Noto Sans Syriac;
+        }
+
+        footer>.footer2 .address p {
+            font: normal normal 300 16px Noto Sans Syriac;
+
+        }
+
+        footer>.footer2 .copyright {
+            font: normal normal 300 16px Noto Sans Syriac;
+        }
+
+        footer .footer2>div:first-child {
+            border-bottom: 1px solid white;
+            width: 1719px;
+            padding: 35px 0px;
+            margin: auto;
+        }
+
+        footer .footer3 {
+            display: flex;
+        }
+
+        footer .footer3>p {
+            margin-right: 50px;
+        }
+
+        footer .footer3>div {
+            border-right: 1px solid white;
+            height: 20px;
+            padding: 0px 25px;
+        }
+
+        footer .footer3>div:last-child {
+            border-right: none;
+        }
+
+        footer .footer4>div {
+            display: flex;
+        }
+
+        footer .footer4>div>div {
+            border-right: 1px solid white;
+            height: 20px;
+            padding: 0px 25px;
+            margin-top: 35px
+        }
+
+        footer .footer4 {
+            margin: auto;
+            width: 1719px;
+        }
+
+        footer .footer4>div>div:last-child {
+            border-right: none;
+        }
+
+        footer .footer4>div>div:first-child {
+            padding: 0px 25px 0px 0px;
+
+        }
+
+        footer .footer4 .copyright {
+            margin-top: 35px;
+            border-right: none;
+        }
+
+        /* 슬라이드 컨테이너 스타일 */
+        .slide-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        /* 슬라이드 스타일 */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* 텍스트 오버레이 스타일 */
+        .slide-text {
+            width: 1000px;
+            height: 327px;
+            position: relative;
+            top: 80px;
+            left: 100px;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-text div {
+            font: normal normal 900 65px 'Noto Sans Syriac', sans-serif;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-text p {
+            font: normal normal 800 25px 'Noto Sans Syriac', sans-serif;
+            color: white;
+        }
+
+        /* 슬라이드 카운터 스타일 */
+        .slide-counter {
+            position: absolute;
+            top: 475px;
+            left: 140px;
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .p-bar {
+            width: 250px;
+            height: 15px;
+            position: relative;
+            top: 483px;
+            left: 279px;
+            background-color: #D3D6D5;
+            border-radius: 10px;
+        }
+
+        /* 진행 바 스타일 */
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        /* 네비게이션 버튼 스타일 */
+        .nav-buttons {
+            position: absolute;
+            top: 460px;
+            left: 650px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-buttons button {
+            background: #F8F8F8;
+
+            border: none;
+
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 16px;
+            width: 40px;
+            height: 40px;
+
+        }
+
+        .slider {
+            width: 1613px;
+            height: 519px;
+            margin: 56px auto 0px;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            header .menubox nav {
+                display: none;
+            }
+
+            header .menubox .login {
+                display: none;
+            }
+
+            header {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".bigmenubox").hide();
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="menubox">
+            <nav>
+                <ul>
+                    <li class="list-li bigmenubox1">정보공개</li>
+                    <li class="list-li bigmenubox2">국민참여</li>
+                    <li class="list-li bigmenubox3">알림•소식</li>
+                    <li class="list-li bigmenubox4">열린경영</li>
+                    <li class="list-li bigmenubox5">사업안내</li>
+                    <li class="list-li bigmenubox6" style="display: flex;">
+                        <p>KSPO</p> 소개
+                    </li>
+                </ul>
+            </nav>
+            <div style="margin-left: 75px;"><img src="logo.png" class="img1"></div>
+            <div class="login">
+                <div><a href="#">로그인</a></div>
+                <a href="#"></a>
+                <div class="img"></div></a>
+            </div>
+        </div>
+        <div class="bigmenubox" data-target="bigmenubox1">
+            <div class="bigmenubox1-1 list1">
+                <div><a href="#">사전정보공포</a></div>
+                <div><a href="#">정보공개청구</a></div>
+                <div><a href="#">정보공개목록</a></div>
+                <div><a href="#">공공데이터 개방</a></div>
+                <div><a href="#">사업실명제</a></div>
+                <div><a href="#">재정정보공개</a></div>
+                <div><a href="#">비공개대상정보세부기준</a></div>
+            </div>
+            <div class="bigmenubox1-2 list1">
+                <div>
+
+                    <div><a href="#">사전정보공표목록</a></div>
+
+                    <div><a href="#">정보공개제도 안내</a></div>
+
+                    <div><a href="#">정보공개목록</a></div>
+
+                    <div><a href="#">공공데이터 이용안내</a></div>
+
+                    <div><a href="#">사업 실명제 개요</a></div>
+
+                    <div><a href="#">기금 수입운용상황</a></div>
+
+                    <div><a href="#">비공개대상정보셉기준</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#">자주찾는정보</a></div>
+
+                    <div><a href="#">정보공개청구</a></div>
+
+                    <div><a href="#">과저정보목록</a></div>
+
+                    <div><a href="#">공공데이터개방목록</a></div>
+
+                    <div><a href="#">대상사업목록</a></div>
+
+                    <div><a href="#">기금지출 운용상황</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#">사전정보공표 제안</a></div>
+
+                    <div><a href="#">온라인 행정심판</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">OPENAPI 사용안내</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">데이터 활용 경진대회</a></div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="bigmenubox" data-target="bigmenubox2">
+            <div class="bigmenubox1-1 list2">
+                <div><a href="#">고객의 소리</a></div>
+                <div><a href="#">제안</a></div>
+                <div><a href="#">신고센터</a></div>
+                <div><a href="#">신청서비스</a></div>
+                <div><a href="#">증명서발급</a></div>
+                <div><a href="#">설문조사</a></div>
+                <div><a href="#">자주 묻는 질문</a></div>
+                <div><a href="#">정보자료실</a></div>
+            </div>
+            <div class="bigmenubox1-2 list2">
+                <div>
+
+                    <div><a href="#">고객의 소리</a></div>
+
+                    <div><a href="#">국민제안</a></div>
+
+                    <div><a href="#">부조리신고</a></div>
+
+                    <div><a href="#">신청서비스</a></div>
+
+                    <div><a href="#">경기력성과 포상금 증서</a></div>
+
+                    <div><a href="#">설문조사</a></div>
+
+                    <div><a href="#">자주찾는질문</a></div>
+
+                    <div><a href="#">일반자료</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">홈페이지 개선제안</a></div>
+
+                    <div><a href="#">이해출돌방지법 신고•지원센터</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">퇴직자 경력증명서</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">발간자료</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">공공데이터 제안</a></div>
+
+                    <div><a href="#">기타 신고 센터</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">공단제공증명서/확인서</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">체육학술자료</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">안심 변호사 신고</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">체육장학증서</a></div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="bigmenubox" data-target="bigmenubox3">
+            <div class="bigmenubox1-1 list3">
+                <div><a href="#">공지사항</a></div>
+                <div><a href="#">입찰공고</a></div>
+                <div><a href="#">유관기관 공고</a></div>
+                <div><a href="#">채용정보</a></div>
+            </div>
+            <div class="bigmenubox1-2 list3">
+                <div>
+
+                    <div><a href="#">공지사항</a></div>
+
+                    <div><a href="#">입찰공고</a></div>
+
+                    <div><a href="#">유관기관 공고</a></div>
+
+                    <div><a href="#">채용공고 및 입사지원</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">입사지원확인 및 수정</a></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bigmenubox" data-target="bigmenubox4">
+            <div class="bigmenubox1-1 list4">
+                <div><a href="#">경영공시</a></div>
+                <div><a href="#">ESG</a></div>
+                <div><a href="#">적극행정</a></div>
+                <div><a href="#">윤리•인권 경영</a></div>
+                <div><a href="#">동반성장</a></div>
+                <div><a href="#">환경경영</a></div>
+                <div><a href="#">안전경영</a></div>
+            </div>
+            <div class="bigmenubox1-2 list4">
+                <div>
+
+                    <div><a href="#">경영공시</a></div>
+
+                    <div><a href="#">ESG</a></div>
+
+                    <div><a href="#">적극행정 소개</a></div>
+
+                    <div><a href="#">윤리경영</a></div>
+
+                    <div><a href="#">KSPO동반성장</a></div>
+
+                    <div><a href="#">환경경영</a></div>
+
+                    <div><a href="#">안전보건중심 경영방침</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">적극행정 국민추천</a></div>
+
+                    <div><a href="#">인권경영</a></div>
+
+                    <div><a href="#">동반성장 프로그램</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">안전경영 조직구성</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">적극행정 국민신청</a></div>
+
+                    <div><a href="#">감사결과공개</a></div>
+
+                    <div><a href="#">협력사고충처리센터</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">안전경영 현황공개</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">소극행정신고</a></div>
+
+                    <div><a href="#">반부패•청렴자료</a></div>
+
+                    <div><a href="#">중소기업기술마켓</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">기업성장응담센터</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">특허나눔</a></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="bigmenubox" data-target="bigmenubox5">
+            <div class="bigmenubox1-1 list5">
+                <div style="height: 40px; position: relative ; top: 5px;"><a href="#">국민체육진흥기금</a></div>
+                <div style="height: 40px; position: relative ; top: 10px;"><a href="#">스포츠복지 지원 사업</a></div>
+                <div style="height: 20px; position: relative ; top: 5px;"><a href="#">스포츠산업 지원</a></div>
+                <div style="height: 40px; position: relative ; top: 15px;"><a href="#">서울올림픽레거시 사업</a></div>
+                <div style="height: 20px; position: relative ; top: 10px;"><a href="#">체육인재 육성/지원</a></div>
+                <div style="height: 20px;  position: relative ; top: 10px;"><a href="#">기금조성사업</a></div>
+                <div style="height: 40px; position: relative ; top: 20px;"><a href="#">KSPO스포츠단</a></div>
+            </div>
+            <div class="bigmenubox1-2 list5">
+                <div>
+
+                    <div><a href="#">국민체육진흥기금 안내</a></div>
+
+                    <div><a href="#">담당자 안내</a></div>
+
+                    <div><a href="#">스포츠 강좌이용권</a></div>
+
+                    <div><a href="#">생활체육시설 조성</a></div>
+
+                    <div><a href="#">스포츠산업 긍융지원</a></div>
+
+                    <div><a href="#">서울올림픽레거시</a></div>
+
+                    <div><a href="#">소마미술관</a></div>
+
+                    <div><a href="#">체육인재 육성</a></div>
+
+                    <div><a href="#">스포츠토토</a></div>
+
+                    <div><a href="#">사이클</a></div>
+
+                    <div><a href="#">여자축구</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#">기금지원 실적 및 계획</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">국민체력100</a></div>
+
+                    <div><a href="#">체육시설 안전관리</a></div>
+
+                    <div><a href="#">스포츠기업지원</a></div>
+
+                    <div><a href="#">올림픽공원/미사경정공원</a></div>
+
+                    <div><a href="#">서울올림픽파크텔</a></div>
+
+                    <div><a href="#">체육지도자양성</a></div>
+
+                    <div><a href="#">KCYCLE</a></div>
+
+                    <div><a href="#">마라톤</a></div>
+
+                    <div><a href="#">다이빙</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#">기금지원사업절차</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">국민건강체조</a></div>
+
+                    <div><a href="#">스포츠스타체육교실</a></div>
+
+                    <div><a href="#">일자리/창업지원</a></div>
+
+                    <div><a href="#">서울올림픽기념관</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">체육인복지</a></div>
+
+                    <div><a href="#">KBOAT</a></div>
+
+                    <div><a href="#">펜싱</a></div>
+
+                    <div><a href="#">장애인 스키</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#">기금지원사업평가</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">에콜리안골프장</a></div>
+
+                    <div><a href="#">투르드코리아</a></div>
+
+                    <div><a href="#">지자체 스포츠산업 활성화</a></div>
+
+                    <div><a href="#">국립스포츠박물관</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">카누</a></div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="bigmenubox" data-target="bigmenubox6">
+            <div class="bigmenubox1-1 list6">
+                <div><a href="#">기관소개</a></div>
+                <div><a href="#">인사말</a></div>
+                <div><a href="#">조직안내</a></div>
+                <div><a href="#">KSPO 브랜드</a></div>
+                <div><a href="#">홍보관</a></div>
+                <div><a href="#">인재채용</a></div>
+                <div><a href="#">사회공한</a></div>
+                <div><a href="#">찾아오시는 길</a></div>
+            </div>
+            <div class="bigmenubox1-2 list6">
+                <div>
+
+                    <div><a href="#">설립목적 및 연혁</a></div>
+
+                    <div><a href="#">인사말</a></div>
+
+                    <div><a href="#">조직도/직원안내</a></div>
+
+                    <div><a href="#">KSPO 𝘢</a></div>
+
+                    <div><a href="#">동영상</a></div>
+
+                    <div><a href="#">채용안내</a></div>
+
+                    <div><a href="#">사회공헌소개</a></div>
+
+                    <div><a href="#">본부</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#">경영가치</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">전화번호 안내</a></div>
+
+                    <div><a href="#">홍보슬로건</a></div>
+
+                    <div><a href="#">인쇄물</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">선배들의 입사이야기</a></div>
+
+                    <div><a href="#">사회공언사업</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">캐릭터</a></div>
+
+                    <div><a href="#">역대수상기록</a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">기부금 지원</a></div>
+
+                </div>
+
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">KSPO 역사관</a></div>
+
+                </div>
+                <div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#"></a></div>
+
+                    <div><a href="#">공단 30년사</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        $("header .menubox nav ul li").mouseover(function () {
+            $(this).css({
+                "color": "#00458D",
+                "border-bottom": "5px solid #00458D"
+            });
+            if ($(this).hasClass("bigmenubox1")) {
+                $(".bigmenubox[data-target=bigmenubox1]").slideDown(100);
+            }
+            if ($(this).hasClass("bigmenubox2")) {
+                $(".bigmenubox[data-target=bigmenubox2]").slideDown(100);
+            }
+            if ($(this).hasClass("bigmenubox3")) {
+                $(".bigmenubox[data-target=bigmenubox3]").slideDown(100);
+            }
+            if ($(this).hasClass("bigmenubox4")) {
+                $(".bigmenubox[data-target=bigmenubox4]").slideDown(100);
+            }
+            if ($(this).hasClass("bigmenubox5")) {
+                $(".bigmenubox[data-target=bigmenubox5]").slideDown(100);
+            }
+            if ($(this).hasClass("bigmenubox6")) {
+                $(".bigmenubox[data-target=bigmenubox6]").slideDown(100);
+            }
+        });
+        $("header .menubox nav ul li").mouseout(function () {
+            $(this).css({
+                "color": "black",
+                "border-bottom": "none"
+            });
+            $(".bigmenubox").hide();
+        })
+        $(".bigmenubox").mouseover(function () {
+            $(".bigmenubox").hide();
+            $(this).show();
+            let target = $(this).attr("data-target");
+            $("." + target).css({
+                "color": "#00458D",
+                "border-bottom": "5px solid #00458D"
+            });
+        });
+        $(".bigmenubox").mouseout(function () {
+            $(".bigmenubox").hide();
+            $("header .menubox nav ul li").css({
+                "color": "black",
+                "border-bottom": "none"
+            });
+        });
+
+        /*$(".bigmenubox").hover(function () {
+            if ($(".bigmenubox").attr("data-target") == "bigmenubox1")
+                $(".bigmenubox1").css({
+                    "display": "block"
+                });
+        }, function () {
+            if ($(".bigmenubox").attr("data-target") == "bigmenubox1")
+                $(".bigmenubox1").css({
+                    "display": "none"
+                });
+        });*/
+
+    </script>
+    <section class="sec1">
+        <div>
+            <div class="inputbox">
+                <input type="search" placeholder="검색어를 입력하세요">
+                <button type="submit">
+
+                </button>
+
+            </div>
+            <div class="tagbox">
+                <a href="#">#채용정보</a>
+                <a href="#">#스포츠산업 지원</a>
+                <a href="#">#KSPO 스포츠단</a>
+            </div>
+            <div class="slider">
+                <div class="slide-container">
+                    <!-- 슬라이드 이미지 -->
+                    <div class="slide active" style="background-image: url('slide1.png');">
+                        <div class="slide-text">
+                            <div>스포츠로 건강하고 행복한<br>대한민국을 만듭니다.</div>
+                            <p>1988 서울올림픽을 개최한 이듬해 탄생한 KSPO는<br>대한민국 체육재정을 책임지는 튼튼한 거목으로 자라났습니다.<br>(2022년까지 총 16조
+                                4,511억원 지원)</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('slide2.png');">
+                        <div class="slide-text">
+                            <div>스포츠복지와 스포츠산업의 성장을 책임지는 K-SPORTS 선도기관</div>
+                            <p>스포츠로 국민이 건강하고,<br>행복한 삶을 누리는 대한민국을 만드는 데 앞장서겠습니다.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('slide3.png');">
+                        <div class="slide-text">
+                            <div>튼튼하게, 탄탄하게, 든든하게!</div>
+                            <p>몸과 마음을 튼튼하게<br>스포츠산업을 탄탄하게<br>스포츠재정을 든든하게!</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('slide4.png');">
+                        <div class="slide-text">
+                            <div>올림픽 유산을 넘어,<br>글로벌 가치가 되다</div>
+                            <p>1988 서울올림픽 개회37주년,<br>대한민국 스포츠발전과 국민 건강의 원동력인<br>서울올림픽레거시를 미래로, 세계로 전합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 슬라이드 카운터 -->
+                    <div class="slide-counter">01/04</div>
+
+                    <!-- 진행 바 -->
+                    <div class="p-bar">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <!-- 네비게이션 버튼 -->
+                    <div class="nav-buttons">
+                        <button id="prev-btn"><img src="<.png"></button>
+                        <button id="play-pause-btn"><img src="stop.png"></button>
+                        <button id="next-btn"><img src=">.png"></button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const slides = document.querySelectorAll('.slide');
+                    const counter = document.querySelector('.slide-counter');
+                    const progressBar = document.querySelector('.progress-bar');
+                    const prevBtn = document.getElementById('prev-btn');
+                    const playPauseBtn = document.getElementById('play-pause-btn');
+                    const nextBtn = document.getElementById('next-btn');
+
+                    let currentSlide = 0;
+                    let isPlaying = false;
+                    let interval;
+                    const totalSlides = slides.length;
+                    const slideDuration = 3000; // 10초
+
+                    // 슬라이드 업데이트 함수
+                    function updateSlide() {
+                        slides.forEach((slide, index) => {
+                            slide.classList.toggle('active', index === currentSlide);
+                        });
+                        counter.textContent = `${String(currentSlide + 1).padStart(2, '0')}/${String(totalSlides).padStart(2, '0')}`;
+                        resetProgressBar();
+                    }
+
+                    // 다음 슬라이드로 이동
+                    function nextSlide() {
+                        console.log('nextslide');
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                        updateSlide();
+                    }
+
+                    // 이전 슬라이드로 이동
+                    function prevSlide() {
+                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                        updateSlide();
+                    }
+
+                    // 슬라이드쇼 시작
+                    function startSlideshow() {
+                        if (isPlaying) return;
+                        isPlaying = true;
+                        playPauseBtn.innerHTML = '<img src="stop.png">';
+                        interval = setInterval(nextSlide, slideDuration);
+                        startProgressBar();
+                    }
+                    // 슬라이드쇼 일시정지
+                    function pauseSlideshow() {
+                        isPlaying = false;
+                        playPauseBtn.textContent = '▶';
+                        clearInterval(interval);
+                        stopProgressBar();
+                    }
+
+                    // 재생/일시정지 토글
+                    function togglePlayPause() {
+                        if (isPlaying) {
+                            pauseSlideshow();
+                        } else {
+                            startSlideshow();
+                        }
+                    }
+
+                    // 진행 바 시작
+                    function startProgressBar() {
+                        progressBar.style.transition = 'none';
+                        progressBar.style.width = '0%';
+                        setTimeout(() => {
+                            progressBar.style.transition = `width ${slideDuration / 1000}s linear`;
+                            progressBar.style.width = '100%';
+                        }, 100);
+                    }
+
+                    // 진행 바 리셋
+                    function resetProgressBar() {
+                        if (isPlaying) {
+                            startProgressBar();
+                        }
+                    }
+
+                    // 진행 바 정지
+                    function stopProgressBar() {
+                        progressBar.style.transition = 'none';
+                        progressBar.style.width = progressBar.style.width;
+                    }
+
+                    // 버튼 이벤트 리스너
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        if (isPlaying) {
+                            clearInterval(interval);
+                            interval = setInterval(nextSlide, slideDuration);
+                            startProgressBar();
+                        }
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        if (isPlaying) {
+                            clearInterval(interval);
+                            interval = setInterval(nextSlide, slideDuration);
+                            startProgressBar();
+                        }
+                    });
+
+                    playPauseBtn.addEventListener('click', togglePlayPause);
+
+                    // 초기화 및 슬라이드쇼 시작
+                    updateSlide();
+                    startSlideshow();
+                });
+            </script>
+        </div>
+        <div class="navi">
+            <div><img class="img1" src="zoflr1.png"></div>
+            <div class="box">
+                <img src="navi1.png">
+                <a href="#">
+                    ESG
+                </a>
+            </div>
+            <div class="box">
+                <img src="navi2.png">
+                <a href="#">
+                    국민건강체조
+                </a>
+            </div>
+            <div class="box">
+                <img src="navi3.png">
+                <a href="#">
+                    KSPO역사관
+                </a>
+            </div>
+            <div class="box">
+                <img src="navi4.png">
+                <a href="#">
+                    KSPO스포츠단
+                </a>
+            </div>
+            <div class="box">
+                <img src="navi5.png">
+                <a href="#">
+                    전화번호안내
+                </a>
+            </div>
+            <div class="box">
+                <img src="navi6.png">
+                <a href="#">
+                    고객의 소리
+                </a>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <section class="sec2">
+        <div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 1200px;">새소식</p>
+                <div style="width: 172px; height: 156px; z-index: -1; position: relative;top: -20px;"><img
+                        src="zoflr2.png"></div>
+            </div>
+            <div class="box">
+                <div class="right_line">
+                    <p>공지사항</p>
+                    <div class="under_line">
+                        <div>
+                            <p>공지사항</p>
+                            <p>2025-03-19</p>
+                        </div>
+                        <div><a href="#">2025년 신입직원(일반직) 채용 변경 사항 안내</a></div>
+                    </div>
+                    <div class="under_line">
+                        <div>
+                            <p>공지사항</p>
+                            <p>2025-02-27</p>
+                        </div>
+                        <div><a href="#">2025년도 스포츠꿈나무 특기장려금 사업 안내</a></div>
+                    </div>
+                    <div class="under_line">
+                        <div>
+                            <p>공지사항</p>
+                            <p>2025-02-17</p>
+                        </div>
+                        <div><a href="#">2025년도 체육지도자 자격검정 및 연수 시행계획 공고</a></div>
+                    </div>
+
+                    <div class="more">
+                        <a href="#">더보기</a>
+                    </div>
+                </div>
+                <div class="right_line ">
+                    <p>입찰공고</p>
+                    <div class="under_line">
+                        <div>
+                            <p>입찰공고</p>
+                            <p>2025-03-22</p>
+                        </div>
+                        <div><a href="#">서울올림픽기념국민체육진흥공단 신설 자회사 채용…</a></div>
+                    </div>
+                    <div class="under_line">
+                        <div>
+                            <p>입찰공고</p>
+                            <p>2025-03-22</p>
+                        </div>
+                        <div><a href="#">2025년 체육시설 안전이용 홍보 용역</a></div>
+                    </div>
+                    <div class="under_line">
+                        <div>
+                            <p>입찰공고</p>
+                            <p>2025-03-21</p>
+                        </div>
+                        <div><a href="#">2025년도 스포츠스타 체육교실 운영 용역</a></div>
+                    </div>
+
+                    <div class="more">
+                        <a href="#">더보기</a>
+                    </div>
+                </div>
+                <div class="right_line">
+                    <p>채용안내</p>
+                    <div class="under_line">
+                        <div>
+                            <p>채용안내</p>
+                            <p>2025-03-20</p>
+                        </div>
+                        <div><a href="#">2025년 체험형 청년인턴(장애인) 채용공고</a></div>
+                    </div>
+                    <div class="under_line">
+                        <div>
+                            <p>채용안내</p>
+                            <p>2025-03-20</p>
+                        </div>
+                        <div><a href="#">2025년 체험형 청년인턴(학예) 채용공고</a></div>
+                    </div>
+                    <div class="under_line">
+                        <div>
+                            <p>채용안내</p>
+                            <p>2025-03-20</p>
+                        </div>
+                        <div><a href="#">2025년 체험형 청년인턴(사무,전산,건축,식음) 채용…</a></div>
+                    </div>
+
+                    <div class="more">
+                        <a href="#">더보기</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(".sec2 .under_line p:last-child").css({
+                    color: "black"
+                })
+            </script>
+        </div>
+    </section>
+    <section class="sec3">
+        <div>
+            <div style="display: flex; align-items: center;">
+                <p>뉴스룸</p>
+            </div>
+            <div class="news">
+                <div class="news1">
+                    <div class="smname">
+                        <div class="smname1">
+                            <p>KSPO매거진</p>
+                            <div><a href="#">더보기</a></div>
+                        </div>
+                        <div class="smname1">
+                            <p>보도자료</p>
+                            <div><a href="#">더보기</a></div>
+                        </div>
+                        <div class="smname1">
+                            <p>온에어</p>
+                            <div><a href="#">더보기</a></div>
+                        </div>
+                    </div>
+                    <div class="news2">
+                        <div>
+                            <div><img src="meg1.png"></div>
+                            <div>
+                                <p>KSPO매거진</p>
+                                <div>
+                                    <a href="#">[KSPO FOCUS]<br>
+                                        KSPO 스포츠단이 쏘아 올린 한국 바이애슬론의 새 역사</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div><img src="bodo1.png"></div>
+                            <div>
+                                <p>보도자료</p>
+                                <div>
+                                    <a href="#">2025 스포츠테크<br>
+                                        프로젝트 수행기관 모집</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div><img src="onair1.png"></div>
+                            <div>
+                                <p>온에어</p>
+                                <div>
+                                    <a href="#">[SPO맨]<br>
+                                        스포엑스편</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="news1">
+                    <div class="news2">
+                        <div>
+                            <div><img src="meg2.png"></div>
+                            <div>
+                                <p>KSPO매거진</p>
+                                <div>
+                                    <a href="#">[빛나는 메달리스트]<br>
+                                        레전드의 탄생, 파리올림픽 3관왕 임시현 선수</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div><img src="bodo2.png"></div>
+                            <div>
+                                <p>보도자료</p>
+                                <div>
+                                    <a href="#">대한민국 스포츠 영웅들,<br>
+                                        한자리에 모여 한국 체육의 미래를 논하다</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div><img src="onair2.png"></div>
+                            <div>
+                                <p>온에어</p>
+                                <div>
+                                    <a href="#">당신의 스포츠를 보여주세요.<br>
+                                        숏폼 공모전 도전하세요!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec4">
+        <div>
+            <div class="sns">
+                <div class="smname">
+                    <p>SNS</p>
+
+                </div>
+                <div class="sns2">
+                    <div>
+                        <div class="img1"></div>
+                        <p>[무엇이든 물어보라호!👀]<br>
+                            EP.3 2025년 스포츠강좌이용권에 대해 알아보자호!</p>
+                    </div>
+                    <div>
+                        <div class="img2"></div>
+                        <p>[시력검사 EVENT🎁]<br>
+                            시력검사표 속 숨겨진 단어를 찾아라!</p>
+                    </div>
+                </div>
+                <div class="blog">
+                    <div class="under_line">
+                        <a href="#">
+                            <div class="img3"></div>
+                        </a>
+                        <div>
+                            <a href="#">개막 전 알고보자! 2025년 새롭게 도입되는 KBO 규정 알아보기</a>
+                            <p>안녕하세요~!서울올림픽기념국민체육진흥공단입니다.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <div class="img3"></div>
+                        </a>
+                        <div>
+
+                            <a href="#">[3월의 스포츠 지식] 주어진 기회는 단 ‘3’번! 역도 알아보기!</a>
+
+                            <p>안녕하세요~!서울올림픽기념국민체육진흥공단입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="link">
+
+                <a style="background-image: url(sns4.png);" href="#"></a>
+                <a style="background-image: url(sns5.png);" href="#"></a>
+                <a style="background-image: url(sns6.png);" href="#"></a>
+                <a style="background-image: url(sns7.png);" href="#"></a>
+                <a style="background-image: url(sns8.png);" href="#"></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer1">
+            <div>
+                <p>협력기관</p>
+                <div><img src="fot1.png"></div>
+                <div><img src="fot2.png"></div>
+                <div><img src="fot3.png"></div>
+                <div><img src="fot4.png"></div>
+                <div><img src="fot5.png"></div>
+            </div>
+        </div>
+        <div class="footer2">
+            <div>
+                <div style="height: 15px;" class="footer3">
+                    <p>주요서비스</p>
+                    <div>
+                        <a href="#">체육인복지사업</a>
+                    </div>
+                    <div>
+                        <a href="#">안전경영현황</a>
+                    </div>
+                    <div>
+                        <a href="#">고객서비스현장</a>
+                    </div>
+                </div>
+                <div>
+                    <!--일단 스킵-->
+                </div>
+            </div>
+            <div class="footer4">
+                <div class="footer5">
+                    <div>
+                        <a href="#" class="none" style="
+                        font: normal normal bold 16px Noto Sans Syriac;
+                        color: #83B5CB;">개인정치보처리방침</a>
+                    </div>
+                    <div>
+                        <a href="#">홈페이지저작권정책</a>
+                    </div>
+                    <div>
+                        <a href="#">전화번호안내</a>
+                    </div>
+                    <div>
+                        <a href="#">위치안내</a>
+                    </div>
+                    <div>
+                        <a href="#">홈페이지이용안내</a>
+                    </div>
+                    <div>
+                        <a href="#">읽기전용프로그램안내</a>
+                    </div>
+                    <div>
+                        <a href="#">사이트맵</a>
+                    </div>
+                </div>
+                <div class="address">
+                    <div>
+                        <p class="none">05540 서울시 송파구 올림픽로 424 올림픽회관</p>
+                    </div>
+                    <div>
+                        <p>TEL 02-410-1114</p>
+                    </div>
+                    <div>
+                        <p>FAX 02-410-1219</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="copyright">
+                        COPYRIGHT © 2021 국민체육진흥공단. ALL RIGHT RESERVED.
+                    </div>
+                    <div style="display: flex; position: relative; top: -50px;left: 50px;">
+                        <div>
+                            <img src="이미지17.png">
+                        </div>
+                        <div>
+                            <img src="이미지18.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
